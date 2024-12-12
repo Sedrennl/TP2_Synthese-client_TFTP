@@ -1,4 +1,4 @@
-# TP1 de Synthèse – Ensea in the Shell
+# TP2 de Synthèse – client TFTP
 #### BLARET Julien & LABROUSSE Sédrenn
 ENSEA 2024
 
@@ -12,20 +12,16 @@ On tiendra ci-joint le journal de bord de l'avancée du TP :
 
 ## Journal de Bord
 
-**Séance 1 : 28/11** => Création du Github, Organisation du GitHub
-- [x] Question 1
-- [x] Question 2
+**Séance 1 : 12/12** => Création du Github, Organisation du GitHub
+- [ ] Question 1
+- [ ] Question 2
+- [ ] Question 3
+- [ ] Question 4
 
-**Séance 2 : 05/12** => Suite du TP de Synthèse
-- [x] Question 3
-- [x] Question 4
-
-**Après séances :
+**Séance 2 : 19/12** => Suite du TP de Synthèse
 - [ ] Question 5
 - [ ] Question 6
-- [ ] Question 7
-- [ ] Question 8
-- [ ] Question 9
+
       
 ---
 
