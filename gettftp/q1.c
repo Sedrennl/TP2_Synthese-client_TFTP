@@ -12,18 +12,16 @@
 #include<netdb.h>
 #include<sys/socket.h>
 
-int main(int argc, char *argv[])
-{
-    //Error test
-    if (argc != 4)
-    {
+int main(int argc, char *argv[]){
+    
+    // Error handling: Check if the program receives the correct number of arguments.
+    if (argc != 4){
         fprintf(stderr, "Usage: %s  <Server ip address> <Port> <File_name> \n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    //Arguments we are going to use
-    char *server_ip = argv[1];
-    char *server_port = argv[2];
-    char *file_name = argv[3];
-
+    // Store command-line arguments for later use.
+    char *server_ip = argv[1];   
+    char *server_port = argv[2]; 
+    char *file_name = argv[3]; 
 }
