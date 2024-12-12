@@ -18,4 +18,4 @@ Pour commmencer nous avons beaucoup de documentation à lire, nous allons essaye
 - **ACK (Acknowledgment) :** Accusé de réception pour confirmer la réception d'un bloc.
 - **ERROR :** Message d'erreur.
 
-![Figure 3-1: Order of Headers](/photos/fig Order of Headers.jpeg)
+![Figure 3-1: Order of Headers](photos/fig Order of Headers.jpeg)
