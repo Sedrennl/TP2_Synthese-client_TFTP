@@ -28,8 +28,10 @@ basé su rle protocole UDP
 
 
 Nous sommes à l'adresse du serveur 127.0.0.1 port 69 (soit le localhost)
+
 Comme indiqué dans la photo ci-dessous : 
 ![Figure](photos/setup_tftpserver.png)
 
 
+Nous sommes en Sockdiagram pour le socket 
 
