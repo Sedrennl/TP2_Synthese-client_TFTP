@@ -1,4 +1,4 @@
-//TP Synthese  client TFTP
+//TP Synthese Client TFTP
 //Question 2
 //Blaret julien and LABROUSSE Sédrenn on 12/12/24.
 //
@@ -12,32 +12,34 @@
 #include<netdb.h>
 #include<sys/socket.h>
 
-int main(int argc, char *argv[])
-{
-    //Error test
-    if (argc != 4)
-    {
+int main(int argc, char *argv[]){
+    
+    // Error handling: Check if the program receives the correct number of arguments.
+    if (argc != 4){
         fprintf(stderr, "Usage: %s  <Server ip address> <Port> <File_name> \n", argv[0]);
         exit(EXIT_FAILURE);
     }
 
-    //Arguments we are going to use
-    char *server_ip = argv[1];
-    char *server_port = argv[2];
-    char *file_name = argv[3];
+    // Store command-line arguments for later use.
+    char *server_ip = argv[1];   
+    char *server_port = argv[2]; 
+    char *file_name = argv[3];   
 
-}
+    // Define a struct to hold address configuration hints.
+    struct addrinfo hints; // Helps narrow down address lookup results.
+    memset(&hints, 0, sizeof(hints)); // Initialize the struct to zero (no restrictions).
+    struct addrinfo *res; // Pointer to the results list returned by getaddrinfo.
 
-    struct addrinfo hints; //sert à restreindre la recherche
-    memset(&hints, 0, sizeof(hints)); // On met nul : pas de restriction;
-    struct addrinfo *res; // Résultats de la recherche,  permet les listes chaînées
+    // Configure the hints structure for a UDP connection using IPv4.
+    hints.ai_protocol = IPPROTO_UDP; // Use UDP protocol.
+    hints.ai_family = AF_INET;       // Use IPv4 addresses only.
+    hints.ai_socktype = SOCK_DGRAM;  // Specify datagram sockets (UDP).
 
-    //paramètrage du hints
-    hints.ai_protocol = IPPROTO_UDP;
-    hints.ai_family = AF_INET;
-    hints.ai_socktype = SOCK_DGRAM;
-
+    // Perform address resolution for the provided server IP.
+    // `res` will contain the resolved address information.
     int addrinfo = getaddrinfo(argv[1], NULL, &hints, &res);
 
+    // Create a socket using the address information from the `res` structure.
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+    
 }
