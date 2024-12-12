@@ -1,0 +1,1 @@
+CMakeLists.txt not found in /run/media/julien/Commun_Clair/2024-2025/Majeure Inf/TP2_Synthese-client_TFTP/gettftp Select CMakeLists.txt
