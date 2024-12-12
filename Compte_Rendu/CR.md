@@ -5,12 +5,12 @@
 
 **Objectifs :** Réaliser un client TFTP, à l’aide des RFC et de captures wireshark
 
-##Résumé documentation 
+## Résumé documentation 
 Pour commmencer nous avons beaucoup de documentation à lire, nous allons essayer de récupérer les informations importantes pour nous ci-dessous.
 
-###THE TFTP PROTOCOL
+### THE TFTP PROTOCOL
 
-####Messages définis dans le protocole ou requètes :
+#### Messages définis dans le protocole ou requètes :
 
 - **RRQ (Read Request) :** Demande de lecture d'un fichier.
 - **WRQ (Write Request) :** Demande d'écriture d'un fichier.
