@@ -20,7 +20,8 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Usage: %s  <Server ip address> <Port> <File_name> \n", argv[0]);
         exit(EXIT_FAILURE);
     }
-    
+
+    //Arguments we are going to use
     char *server_ip = argv[1];
     char *server_port = argv[2];
     char *file_name = argv[3];
