@@ -26,4 +26,10 @@ basé su rle protocole UDP
 
 *2. Host  B  sends  a "ACK" (with block number= 0) to host A with source= B's TID, destination= A's TID.*
 
-Nous sommes sur sealion, n'ayant pas accès à     Nous avons trouvé l'équivalent sur fédora, 
+
+Nous sommes à l'adresse du serveur 127.0.0.1 port 69 (soit le localhost)
+Comme indiqué dans la photo ci-dessous : 
+![Figure](photos/setup_tftpserver.png)
+
+
+
