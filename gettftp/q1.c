@@ -1,4 +1,4 @@
-//TP Synthese ENSEA in the Shell
+//TP Synthese Client TFTP
 //Question 1
 //Blaret julien and LABROUSSE Sédrenn on 12/12/24.
 //
