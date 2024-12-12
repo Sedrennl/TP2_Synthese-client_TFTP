@@ -1,3 +1,8 @@
+//TP Synthese ENSEA in the Shell
+//Question 1
+//Blaret julien and LABROUSSE Sédrenn on 12/12/24.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
