@@ -34,3 +34,4 @@ Le dépot se réparti en 2 dossier :
 
 **🟢 gettftp**
 >ce dossier contient le code des différentes questions
+>nous travaillons actuellement dans le main, mais les questions finies sont rerangées dans des fichiers correspondants
