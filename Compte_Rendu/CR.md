@@ -30,7 +30,7 @@ basé su rle protocole UDP
 Nous sommes à l'adresse du serveur 127.0.0.1 port 69 (soit le localhost)
 
 Comme indiqué dans la photo ci-dessous : 
-![Figure](photos/setup_tftpserver.png)
+![Figure](photos/ipa.png)
 
 ### Question 1 : [code question 1](../gettftp/q1.c)
 
