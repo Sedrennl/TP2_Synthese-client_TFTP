@@ -37,3 +37,41 @@ Comme indiqué dans la photo ci-dessous :
 
 Nous sommes en Sockdiagram pour le socket 
 
+
+Dans cette partie, nous ne faisons "que" initier les variables/les informations du port sur lequel nous nous connectons : l'adresse IP du serveur$, l'adresse du port utilisé le nom du fichier. 
+En lancant la fonction on récupère également une quatrième variable, le nombre d'infos passées.
+
+Nous utilisons cette variable pour vérifier les arfuments et prévenir directement en cas d'erreur.
+
+
+### Question 2 : [code question 2](../gettftp/q2.c)
+
+Pour chercher l'adresse du fichier nous utilisons get addrinfo
+
+A ce stade nous avons eu un segfault. Pour le contourner nous nous sommes conecté sur un serveur local à notre machine. PLutôt qu'un réseau classique.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
