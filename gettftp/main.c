@@ -20,11 +20,11 @@ int main(int argc, char *argv[])
     char *server_port = argv[2];
     char *file_name = argv[3];
 
+    struct sockaddr server;
 
     struct addrinfo hints; //sert à restreindre la recherche
     memset(&hints, 0, sizeof(hints)); // On met nul : pas de restriction;
     struct addrinfo *res; // Résultats de la recherche,  permet les listes chaînées
-    struct sockaddr *server;
 
 
     //paramètrage du hints
@@ -42,12 +42,16 @@ int main(int argc, char *argv[])
 
     char request[BUFFSIZE];
     char response[DATASIZE];
+    char ACK[4] = "\0\4\0\0";
     int lenght_read_request = build_request(file_name,request);
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
     sendto(sock, request, lenght_read_request, 0, res->ai_addr, res->ai_addrlen);
-    if (recvfrom(sock, response, BUFFSIZE, 0,server, &res->ai_addrlen ) !=-1)
+    if (recvfrom(sock, response, BUFFSIZE, 0,&server, &res->ai_addrlen ) !=-1)
     {
         write(fd_recv, response+4,DATASIZE );
         write(fd_temp,response, BUFFSIZE);
+        ACK[2] = response[2];
+        ACK[3] = response[3];
+        sendto(sock, ACK, 4, 0, &server, res->ai_addrlen); //A chaque fois que l'on envoie une réponse c'est sur le nouveau socket
     }
 }
