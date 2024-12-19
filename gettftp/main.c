@@ -29,7 +29,10 @@ int main(int argc, char *argv[])
     hints.ai_family = AF_INET;
     hints.ai_socktype = SOCK_DGRAM;
 
-    int addrinfo = getaddrinfo(argv[1], NULL, &hints, &res);
+    int addrinfo = getaddrinfo(server_ip, server_port, &hints, &res);
 
+
+    char* read_request_opcode = "b'\x00\x01'";
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
+    sendto(sock, read_request_opcode, strlen(read_request_opcode), 0, res->ai_addr, res->ai_addrlen);
 }
