@@ -6,7 +6,9 @@
 #include<fcntl.h>
 #include<netdb.h>
 #include<sys/socket.h>
+#include <fcntl.h>
 #include"fonctions.h"
+#include <unistd.h>
 int main(int argc, char *argv[])
 {
     if (argc != 4)
@@ -19,10 +21,11 @@ int main(int argc, char *argv[])
     char *file_name = argv[3];
 
 
-
     struct addrinfo hints; //sert à restreindre la recherche
     memset(&hints, 0, sizeof(hints)); // On met nul : pas de restriction;
     struct addrinfo *res; // Résultats de la recherche,  permet les listes chaînées
+    struct sockaddr *server;
+
 
     //paramètrage du hints
     hints.ai_protocol = IPPROTO_UDP;
@@ -31,8 +34,20 @@ int main(int argc, char *argv[])
 
     int addrinfo = getaddrinfo(server_ip, server_port, &hints, &res);
 
+    creat("./recv.txt",S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH); //Pour écrire le fichier
+    int fd_recv = open("./recv.txt",O_RDWR);
+
+    creat("./recv_temp.txt",S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH);//Pour traiter le fichier (ACK, fichiers suivants...)
+    int fd_temp= open("./recv_temp.txt",O_RDWR);
+
     char request[BUFFSIZE];
+    char response[DATASIZE];
     int lenght_read_request = build_request(file_name,request);
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
     sendto(sock, request, lenght_read_request, 0, res->ai_addr, res->ai_addrlen);
+    if (recvfrom(sock, response, BUFFSIZE, 0,server, &res->ai_addrlen ) !=-1)
+    {
+        write(fd_recv, response+4,DATASIZE );
+        write(fd_temp,response, BUFFSIZE);
+    }
 }

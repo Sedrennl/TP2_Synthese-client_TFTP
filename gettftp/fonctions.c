@@ -17,7 +17,7 @@ int build_request(char* filename,char* request){
     offset += strlen(filename) + 1; // Inclut l'octet nul
 
     // Ajouter le mode de transfert
-    strcpy(&request[offset], "octet");
-    offset += strlen("octet") + 1; // Inclut l'octet nul
+    strcpy(&request[offset], "netascii");
+    offset += strlen("netascii") + 1; // Inclut l'octet nul
     return offset;
   }
