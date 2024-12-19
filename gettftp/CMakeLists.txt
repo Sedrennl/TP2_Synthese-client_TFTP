@@ -3,4 +3,5 @@ project(gettftp C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(gettftp main.c)
+add_executable(gettftp main.c
+                        fonctions.c)

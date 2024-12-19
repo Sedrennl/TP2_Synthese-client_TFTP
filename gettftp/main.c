@@ -6,7 +6,7 @@
 #include<fcntl.h>
 #include<netdb.h>
 #include<sys/socket.h>
-
+#include"fonctions.h"
 int main(int argc, char *argv[])
 {
     if (argc != 4)
@@ -31,8 +31,8 @@ int main(int argc, char *argv[])
 
     int addrinfo = getaddrinfo(server_ip, server_port, &hints, &res);
 
-
-    char* read_request_opcode = "b'\x00\x01'";
+    char request[BUFFSIZE];
+    int lenght_read_request = build_request(file_name,request);
     int sock = socket(res->ai_family, res->ai_socktype, res->ai_protocol);
-    sendto(sock, read_request_opcode, strlen(read_request_opcode), 0, res->ai_addr, res->ai_addrlen);
+    sendto(sock, request, lenght_read_request, 0, res->ai_addr, res->ai_addrlen);
 }

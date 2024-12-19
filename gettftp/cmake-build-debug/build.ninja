@@ -55,6 +55,12 @@ build CMakeFiles/gettftp.dir/main.c.o: C_COMPILER__gettftp_unscanned_Debug /run/
   OBJECT_DIR = CMakeFiles/gettftp.dir
   OBJECT_FILE_DIR = CMakeFiles/gettftp.dir
 
+build CMakeFiles/gettftp.dir/fonctions.c.o: C_COMPILER__gettftp_unscanned_Debug /run/media/julien/Commun_Clair/2024-2025/Majeure$ Inf/TP2_Synthese-client_TFTP/gettftp/fonctions.c || cmake_object_order_depends_target_gettftp
+  DEP_FILE = CMakeFiles/gettftp.dir/fonctions.c.o.d
+  FLAGS = -g -std=gnu11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/gettftp.dir
+  OBJECT_FILE_DIR = CMakeFiles/gettftp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target gettftp
@@ -63,7 +69,7 @@ build CMakeFiles/gettftp.dir/main.c.o: C_COMPILER__gettftp_unscanned_Debug /run/
 #############################################
 # Link the executable gettftp
 
-build gettftp: C_EXECUTABLE_LINKER__gettftp_Debug CMakeFiles/gettftp.dir/main.c.o
+build gettftp: C_EXECUTABLE_LINKER__gettftp_Debug CMakeFiles/gettftp.dir/main.c.o CMakeFiles/gettftp.dir/fonctions.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/gettftp.dir
   POST_BUILD = :
