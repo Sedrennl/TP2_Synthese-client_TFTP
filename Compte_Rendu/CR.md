@@ -48,7 +48,7 @@ Nous utilisons cette variable pour vérifier les arfuments et prévenir directem
 
 Pour chercher l'adresse du fichier nous utilisons get addrinfo qui renvoie entre autre l'adresse IP, le port et une piste pour de potentiels socket. 
 
-A ce stade nous avons eu un segfault. Pour le contourner nous nous sommes conecté sur un serveur local à notre machine. PLutôt qu'un réseau classique. Mais ce n'est qu'un paliatif
+A ce stade nous avons eu un segfault. Pour le contourner nous nous sommes conecté sur un serveur local à notre machine. PLutôt qu'un réseau classique. Mais ce n'est qu'un paliatif.
 
 On a tenté d'utiliser la fonction strcat. Mais elle ne permet pas d'injecter des 0 en fin de chaine de caractère, ce qui est nécessaire pour le bon déroulé du code.
 
